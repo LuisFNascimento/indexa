@@ -34,10 +34,16 @@ export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz'
   contatos: Contato[] = agenda;
 
-  filtroPorTexto: string = '';
+  filtroPorTexto: string = ''
+
+  filtrarContatosPorTexto(): Contato[] {
+    return this.contatos.filter(contato => {
+      return contato.nome.toLowerCase().includes(this.filtroPorTexto.toLowerCase());
+    });
+  }
 
   filtrarContatosPorLetraInicial(letra: string): Contato[] {
-    return this.contatos.filter(contato =>{
+    return this.filtrarContatosPorTexto().filter(contato =>{
       return contato.nome.toLowerCase().startsWith(letra);
     })}
   }
