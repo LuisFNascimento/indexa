@@ -36,15 +36,30 @@ export class AppComponent {
 
   filtroPorTexto: string = ''
 
-  filtrarContatosPorTexto(): Contato[] {
-    return this.contatos.filter(contato => {
-      return contato.nome.toLowerCase().includes(this.filtroPorTexto.toLowerCase());
-    });
+    removerAcentos(texto: string): string {
+  return texto
+    .normalize('NFD') // separa letras de acentos
+    .replace(/[\u0300-\u036f]/g, '') // remove acentos
+    .toLowerCase(); // padroniza
   }
 
-  filtrarContatosPorLetraInicial(letra: string): Contato[] {
-    return this.filtrarContatosPorTexto().filter(contato =>{
-      return contato.nome.toLowerCase().startsWith(letra);
-    })}
+  filtrarContatosPorTexto(): Contato[] {
+    if (!this.filtroPorTexto.trim()) return this.contatos;
+
+    const filtro = this.removerAcentos(this.filtroPorTexto);
+
+    return this.contatos.filter(contato =>
+      this.removerAcentos(contato.nome).includes(filtro)
+    );
   }
+
+filtrarContatosPorLetraInicial(letra: string): Contato[] {
+  const contatosFiltrados = this.filtrarContatosPorTexto();
+  const letraNormalizada = this.removerAcentos(letra);
+
+  return contatosFiltrados.filter(contato =>
+    this.removerAcentos(contato.nome).startsWith(letraNormalizada)
+  );
+}
+}
 
