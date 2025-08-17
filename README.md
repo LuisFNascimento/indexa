@@ -1,27 +1,116 @@
-# Indexa
+# 📒 Agenda de Contatos - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Este é um projeto desenvolvido em **Angular**, que implementa uma **agenda de contatos** com as seguintes funcionalidades:
 
-## Development server
+✅ Listagem de contatos em ordem alfabética  
+✅ Busca por nome com normalização de acentos  
+✅ Filtragem por letra inicial  
+✅ Formulário para adicionar/editar contatos  
+✅ Separação de componentes (container, cabeçalho, separador, contato, formulário)  
+✅ Uso de **FormsModule** e **ReactiveFormsModule**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 17+ (Standalone Components)
+- TypeScript
+- HTML5 / CSS3
+- FormsModule & ReactiveFormsModule
+- JSON como fonte de dados inicial
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📂 Estrutura do Projeto
 
-## Running unit tests
+```
+src/
+ ├── app/
+ │   ├── componentes/
+ │   │   ├── cabecalho/
+ │   │   ├── contato/
+ │   │   ├── container/
+ │   │   └── separador/
+ │   │
+ │   ├── paginas/
+ │   │   └── formulario-contato/
+ │   │
+ │   ├── agenda.json
+ │   ├── app.component.ts
+ │   ├── app.component.html
+ │   └── app.routes.ts
+ │
+ └── index.html
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🖼️ Prints da Aplicação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 📋 Lista de Contatos
 
-## Further help
+Exemplo da tela inicial com **busca e separação alfabética**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Lista de Contatos](./docs/lista-contatos.png)
+
+---
+
+### 🔍 Filtro por Nome
+
+Busca inteligente que ignora acentos e diferenciação de maiúsculas/minúsculas:
+
+![Filtro de Contatos](./docs/filtro-contatos.png)
+
+---
+
+### 📝 Formulário de Contato
+
+Formulário reativo para adicionar/editar informações do contato:
+
+![Formulário de Contato](./docs/formulario-contato.png)
+
+---
+
+## ⚙️ Como Executar
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/agenda-angular.git
+   ```
+
+2. Acesse a pasta:
+
+   ```bash
+   cd agenda-angular
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   ng serve
+   ```
+
+5. Acesse no navegador:
+   ```
+   http://localhost:4200
+   ```
+
+---
+
+## 📌 Melhorias Futuras
+
+- [ ] Persistência de dados em API/Database
+- [ ] Edição e exclusão de contatos
+- [ ] Upload de foto para cada contato
+- [ ] Exportação/importação da agenda
+
+---
+
+📌 Projeto desenvolvido para estudos em Angular e boas práticas de organização de componentes.
