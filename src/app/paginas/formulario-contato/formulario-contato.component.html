@@ -55,14 +55,10 @@
     />
     @if (contatoForm.get('email')?.errors?.['required'] &&
     contatoForm.get('email')?.touched) {
-    <div class="mensagem-erro">
-      Campo obrigatório
-    </div>
+    <div class="mensagem-erro">Campo obrigatório</div>
     } @if (contatoForm.get('email')?.errors?.['email'] &&
     contatoForm.get('email')?.touched) {
-    <div class="mensagem-erro">
-      Formato de e-mail inválido
-    </div>
+    <div class="mensagem-erro">Formato de e-mail inválido</div>
     }
 
     <app-separador></app-separador>
@@ -94,7 +90,13 @@
       <button (click)="cancelar()" class="botao-cancelar" type="button">
         Cancelar
       </button>
-      <button class="botao-salvar">Salvar Contato</button>
+      <button
+        [disabled]="contatoForm.invalid"
+        [ngClass]="contatoForm.valid ? 'botao-salvar' : 'botao-desbilitar'"
+        type="submit"
+      >
+        Salvar Contato
+      </button>
     </section>
   </form>
 </app-container>
