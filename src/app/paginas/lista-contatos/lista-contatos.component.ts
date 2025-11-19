@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ContainerComponent } from "../../componentes/container/container.component";
 import { CabecalhoComponent } from "../../componentes/cabecalho/cabecalho.component";
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ContatoComponent } from '../../componentes/contato/contato.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
@@ -27,8 +27,10 @@ import agenda from '../../agenda.json';
     ContatoComponent,
     FormularioContatoComponent,
     FormsModule,
-    CabecalhoComponent
-  ],
+    CabecalhoComponent,
+    RouterLink
+
+],
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'
 })
