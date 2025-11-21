@@ -18,6 +18,13 @@ header .cabecalho-link img.seta {
   margin: 0 8px;
 }
 
+header .cabecalho-link button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
 header .cabecalho-link a {
   text-decoration: none;
   font-family: 'Montserrat';
@@ -33,13 +40,6 @@ header .cabecalho-contato {
   flex-direction: column;
   align-items: center;
   margin-top: 32px;
-}
-
-header .cabecalho-link button {
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  background: none;
 }
 
 h1 {
@@ -158,6 +158,11 @@ input:focus {
   color:#FFFFFF;
   background-color: #0D6EFD;
   cursor: pointer;
+}
+
+.botao-salvar:active {
+  background-color: #388e3c; /* cor ao clicar */
+  transform: scale(0.97); /* leve efeito de clique */
 }
 
 .botao-desabilitado {
